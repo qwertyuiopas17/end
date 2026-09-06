@@ -1,0 +1,47 @@
+{
+  "model_name": "NetSentinel Expert 5: Port Scan Detector",
+  "model_type": "XGBoost Gradient-Boosted Trees",
+  "version": "1.0.0",
+  "task": "Binary Classification (PortScan vs Benign)",
+  "accuracy": 0.9985048824931084,
+  "precision": 0.9925346605047991,
+  "recall": 0.9960756332500892,
+  "f1": 0.9943019943019943,
+  "auc_roc": 0.99996771891867,
+  "training_time_seconds": 5.08512282371521,
+  "n_features": 40,
+  "dataset": {
+    "sources": [
+      "CIC-IDS2017",
+      "LITNET-2020",
+      "UNSW-NB15",
+      "CSE-CIC-IDS2018"
+    ],
+    "total_samples": 107015,
+    "train_samples": 85612,
+    "test_samples": 21403
+  },
+  "inference": {
+    "format": "ONNX",
+    "latency_ms": 0.01749377100009042,
+    "throughput_per_sec": 57163.203976708704
+  },
+  "top_10_features": [
+    "sttl",
+    "swin",
+    "ctstatettl",
+    "ctdstsrcltm",
+    "dmean",
+    "sloss",
+    "dloss",
+    "src_bytes",
+    "smean",
+    "ctsrvdst"
+  ],
+  "mitre_mapping": {
+    "T1046": "Network Service Discovery",
+    "T1595": "Active Scanning",
+    "T1595.001": "Scanning IP Blocks",
+    "T1595.002": "Vulnerability Scanning"
+  }
+}
